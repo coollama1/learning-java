@@ -2,6 +2,7 @@ package com.coolprojects.learning.collections;
 
 
 import java.util.Comparator;
+import java.util.Objects;
 
 public class Person {
     private String name;
@@ -21,6 +22,33 @@ public class Person {
 
     public String getName() {
         return name;
+    }
+
+    public String getFirstName(){
+        String [] names = getNames();
+        return (names.length == 2) ? names[0] : "";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return age == person.age && height == person.height && name.equals(person.name) && Objects.equals(id, person.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, id, age, height);
+    }
+
+    public String getLastName(){
+        String [] names = getNames();
+        return (names.length == 2) ? names[1] : "";
+    }
+
+    private String [] getNames(){
+        return name.split(" ", 0);
     }
 
     public void setName(String name) {
@@ -53,7 +81,7 @@ public class Person {
 
     @Override
     public String toString(){
-        return String.format("(%s,%d)", name, age);
+        return String.format("(%s , %d)", name, age);
     }
 
     public final static Comparator<Person> BY_AGE = Comparator.comparingInt(Person::getAge);

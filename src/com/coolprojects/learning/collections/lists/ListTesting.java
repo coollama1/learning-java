@@ -1,4 +1,6 @@
-package com.coolprojects.learning.collections;
+package com.coolprojects.learning.collections.lists;
+
+import com.coolprojects.learning.collections.Person;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,7 +20,6 @@ public class ListTesting {
         Iterator<Person> iterator = people.iterator();
 
         //using the iterator.remove() method to remove objects from collections
-/*
         while(iterator.hasNext()){
             Person currentPerson = iterator.next();
             if(currentPerson.getAge() > CAP_AGE){
@@ -27,7 +28,10 @@ public class ListTesting {
             }
         }
         System.out.println(people);
-*/
+
+        people.add(new Person("Marvin", 23));
+        people.add(new Person("Karnowsky", 24));
+        people.add(new Person("Carl", 15));
 
         people.sort(Person.BY_AGE);
 
