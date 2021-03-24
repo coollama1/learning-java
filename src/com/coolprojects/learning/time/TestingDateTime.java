@@ -1,6 +1,5 @@
-package com.coolprojects.learning.collections.time;
+package com.coolprojects.learning.time;
 
-import java.text.ParseException;
 import java.time.*;
 import java.time.format.DateTimeParseException;
 import java.time.format.FormatStyle;

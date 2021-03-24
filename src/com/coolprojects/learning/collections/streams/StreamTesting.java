@@ -59,11 +59,6 @@ public class StreamTesting {
             .forEach(System.out::println);
     }
 
-    private static void testRandomNumber() {
-        for (int c = 0; c < 100; c++)
-            System.out.println(randomNumber(0,5));
-    }
-
     private static void printPeople() {
         people
             .stream()
